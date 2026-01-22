@@ -1,8 +1,8 @@
 export const arrayCards = [
   {
-    title: '',
-    repo: '',
-    localImage: '/assets/.avif',
+    title: 'Minimalist i18n in NextJs',
+    repo: 'https://github.com/20essentials/project-1357',
+    localImage: '/assets/project-1357.avif',
     id: '001'
   },
   
