@@ -5,6 +5,12 @@ export const arrayCards = [
     localImage: '/assets/project-1357.avif',
     id: '001'
   },
+  {
+    title: 'Proving Trace TurboPack',
+    repo: 'https://github.com/20essentials/project-1358',
+    localImage: '/assets/trace-turbopack.avif',
+    id: '001'
+  },
   
 ];
 
