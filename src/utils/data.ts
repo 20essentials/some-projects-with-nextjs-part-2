@@ -9,7 +9,13 @@ export const arrayCards = [
     title: 'Proving Trace TurboPack',
     repo: 'https://github.com/20essentials/project-1358',
     localImage: '/assets/trace-turbopack.avif',
-    id: '001'
+    id: '002'
+  },
+  {
+    title: 'How to use MDX and Markdown in Next.js',
+    repo: 'https://github.com/20essentials/project-1359',
+    localImage: '/assets/project-1359.avif',
+    id: '003'
   },
   
 ];
