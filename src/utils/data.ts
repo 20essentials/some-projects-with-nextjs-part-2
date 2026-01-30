@@ -23,6 +23,12 @@ export const arrayCards = [
     localImage: '/assets/project-1361.avif',
     id: '004'
   },
+  {
+    title: 'Review of Turbopack Bundle Analyzer',
+    repo: 'https://turbopack-bundle-analyzer-demo.vercel.sh/',
+    localImage: '/assets/turbopack-analyzer.avif',
+    id: '005'
+  },
   
 ];
 
