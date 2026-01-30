@@ -17,6 +17,12 @@ export const arrayCards = [
     localImage: '/assets/project-1359.avif',
     id: '003'
   },
+  {
+    title: 'NextJs 15: Subdomain-based Multi-Tenant',
+    repo: 'https://github.com/20essentials/project-1361',
+    localImage: '/assets/project-1361.avif',
+    id: '004'
+  },
   
 ];
 
