@@ -29,6 +29,12 @@ export const arrayCards = [
     localImage: '/assets/turbopack-analyzer.avif',
     id: '005'
   },
+  {
+    title: 'Custom Prefetching',
+    repo: 'https://github.com/20essentials/project-1362/blob/main/src/components/custom-link.tsx',
+    localImage: '/assets/custom-prefetching.avif',
+    id: '006'
+  },
   
 ];
 
