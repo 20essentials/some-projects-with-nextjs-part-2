@@ -35,6 +35,12 @@ export const arrayCards = [
     localImage: '/assets/custom-prefetching.avif',
     id: '006'
   },
+  {
+    title: 'Multi-Zones + Micro-Frontends + Monorepo',
+    repo: 'https://github.com/20essentials/project-1363/blob/main/home/next.config.js',
+    localImage: '/assets/project-1363.avif',
+    id: '007'
+  },
   
 ];
 
