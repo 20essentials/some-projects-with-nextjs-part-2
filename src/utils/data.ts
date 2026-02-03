@@ -41,6 +41,12 @@ export const arrayCards = [
     localImage: '/assets/project-1363.avif',
     id: '007'
   },
+  {
+    title: 'Progressive Web Application (PWA)',
+    repo: 'https://github.com/20essentials/project-1364/blob/main/src/app/manifest.ts',
+    localImage: '/assets/project-1364.avif',
+    id: '008'
+  },
   
 ];
 
