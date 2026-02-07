@@ -47,6 +47,12 @@ export const arrayCards = [
     localImage: '/assets/project-1364.avif',
     id: '008'
   },
+  {
+    title: 'Redirects Bloom Filter',
+    repo: 'https://github.com/20essentials/project-1366',
+    localImage: '/assets/project-1366.avif',
+    id: '009'
+  },
   
 ];
 
