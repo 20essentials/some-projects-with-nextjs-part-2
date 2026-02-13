@@ -1,29 +1,142 @@
 ---
-const arrayCards = [
-  {
-    title: 'Bosque Fondal',
-    repo: 'https://github.com/20essentials/project-000-820',
-    localImage: '/assets/n820.avif',
-    id: '001'
-  }
-];
+import { arrayCards } from '@/utils/data';
+import { baseUrl } from '@/utils/functions';
 ---
 
-<section class="am-container-cards">
+<main class='carousel' style='--k: 0'>
   {
-    arrayCards.map(({ id, localImage, repo, title }) => (
-      <aside class='card' />
+    arrayCards.map(({ id, localImage, repo, title }, i) => (
+      <div class='cell' style={`--i: ${i}`}>
+        <article class='card'>
+          <figure class='card-figure'>
+            <img
+              draggable='false'
+              class='card-image'
+              src={baseUrl(localImage)}
+              title={title}
+            />
+          </figure>
+        </article>
+      </div>
     ))
   }
-</section>
+</main>
 
 <style>
-  .am-container-cards {
+  @property --fx {
+    syntax: '<number>';
+    initial-value: 1;
+    inherits: true;
+  }
+  @property --fy {
+    syntax: '<number>';
+    initial-value: 1;
+    inherits: true;
+  }
+  @property --a {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: true;
+  }
+
+  .carousel,
+  .carousel .cell,
+  .carousel .card,
+  .carousel .card-figure {
+    display: grid;
+  }
+
+  .carousel {
     min-height: 100vh;
-    display: grid;
-    padding: 2.2vmax;
-    gap: 2.2vmax;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(17vmax, 1fr));
+    overflow: hidden;
+    position: relative;
+    z-index: 50;
+  }
+
+  .carousel .cell {
+    --dif: calc(var(--i) - var(--k));
+    --abs: abs(var(--dif));
+    --sgn: sign(var(--dif));
+    --lat: min(1, var(--abs));
+    --sel: calc(1 - var(--lat));
+    --adj: max(0, var(--lat) * (2 - var(--abs)));
+    --out: calc(var(--lat) * (1 - var(--adj)));
+    --vis: clamp(0, 3 - var(--abs), 1);
+    --fx: calc(var(--sel) + var(--adj) * 0.2 + var(--out) * 0.18);
+    --fy: calc(var(--sel) + var(--adj) * 0.86 + var(--out) * 0.76);
+    grid-area: 1/1;
+    place-self: center;
+    overflow: hidden;
+    perspective-origin: calc((1 - var(--sgn)) * 50%);
+    perspective: 20em;
+    translate: calc(
+      var(--dif) * 4% + var(--sgn) *
+        (
+          1 + var(--lat) * 0.2 + var(--out) *
+            (0.2 + (2 * (var(--abs) - 1) - 1) * 0.18)
+        ) *
+        50%
+    );
+    scale: var(--fx) var(--fy);
+    transition:
+      translate 0.75s ease-out,
+      perspective-origin 0s calc(var(--sel) * 0.75s),
+      scale 0.75s ease-out;
+  }
+
+  .carousel .card {
+    --a: calc(var(--sgn) * 10deg);
+    overflow: hidden;
+    margin: 0;
+    border-radius: calc(1em * cos(var(--a)) / var(--fx)) / calc(1em / var(--fy));
+    transform-origin: calc((1 + var(--sgn)) * 50%);
+    transform: matrix3d(
+      1,
+      0,
+      tan(var(--a)),
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    );
+    transition: inherit;
+    transition-property: --a, transform-origin, --fx, --fy;
+  }
+
+  .carousel .card-figure {
+    margin: 0;
+    scale: cos(var(--a)) 1;
+    opacity: calc(1 - var(--abs) * 0.333);
+    transition: inherit;
+    transition-property: opacity;
+  }
+
+  .carousel .card-image {
+    width: 42vmax;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    scale: calc(1 + var(--lat) * 0.75);
+    transition: scale 0.75s ease-out;
   }
 </style>
+
+<script>
+  const findParentByClass = (element, className) =>
+    element?.closest?.(`.${className}`) ?? null;
+
+  window.addEventListener('click', ({ target }) => {
+    const cell = findParentByClass(target, 'cell');
+    if (!cell) return;
+    const index = cell.style.getPropertyValue('--i');
+    cell.parentElement?.style.setProperty('--k', index);
+  });
+</script>
