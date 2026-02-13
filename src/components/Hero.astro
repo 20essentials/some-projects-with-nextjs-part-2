@@ -1,20 +1,26 @@
 ---
 import { baseUrl } from '@/utils/functions';
-const logo = baseUrl('/assets/css-logo.svg');
+import Titulo from './titulo.astro';
+const logo = baseUrl('/assets/next-js-logo.svg');
 ---
 
-<section class="am-hero">
-  <h1>
-    20 PROJECTS WITH CSS <img src={logo} alt='Logo' />
-  </h1>
+<section class='am-hero'>
+  <!-- <h1>
+    TITLE <img src={logo} alt='Logo' />
+  </h1> -->
+  <Titulo />
 </section>
 <style>
   .am-hero {
     height: 100vh;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    place-content: center;
   }
 
-  h1 {
+/*   h1 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,5 +36,5 @@ const logo = baseUrl('/assets/css-logo.svg');
       width: 4vmax;
       transform: translateY(0.3vmax);
     }
-  }
+  } */
 </style>
