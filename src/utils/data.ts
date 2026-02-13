@@ -55,4 +55,4 @@ export const arrayCards = [
   }
 ];
 
-export const TITLE = `${arrayCards.length} Projects With NextJs - Part 2`;
+export const TITLE = `${arrayCards.length} Projects With NEXT.Js - Part 2`;

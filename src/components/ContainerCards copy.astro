@@ -7,7 +7,6 @@ import { baseUrl } from '@/utils/functions';
   {
     arrayCards.map(({ id, localImage, repo, title }, i) => (
       <div class='cell' style={`--i: ${i}`}>
-        <a href={repo} class="am-anchor">{title}</a>
         <article class='card'>
           <figure class='card-figure'>
             <img
@@ -54,24 +53,6 @@ import { baseUrl } from '@/utils/functions';
     z-index: 50;
   }
 
-  .am-anchor {
-    color: #eee;
-    position: absolute;
-    bottom: -3vmax;
-    text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1vmax;
-    background-color: #0008;
-    padding: 0.4vmax 1.3vmax;
-    width: 100%;
-
-     /* 👇 NUEVO */
-  opacity: var(--sel);
-  pointer-events: calc(var(--sel) * 1);
-  transition: opacity 0.4s ease;
-  }
-
   .carousel .cell {
     --dif: calc(var(--i) - var(--k));
     --abs: abs(var(--dif));
@@ -85,9 +66,9 @@ import { baseUrl } from '@/utils/functions';
     --fy: calc(var(--sel) + var(--adj) * 0.86 + var(--out) * 0.76);
     grid-area: 1/1;
     place-self: center;
-    position: relative;
+    overflow: hidden;
     perspective-origin: calc((1 - var(--sgn)) * 50%);
-    perspective: 15vmax;
+    perspective: 20em;
     translate: calc(
       var(--dif) * 4% + var(--sgn) *
         (
@@ -107,7 +88,7 @@ import { baseUrl } from '@/utils/functions';
     --a: calc(var(--sgn) * 10deg);
     overflow: hidden;
     margin: 0;
-    border-radius: calc(1vmax * cos(var(--a)) / var(--fx)) / calc(1em / var(--fy));
+    border-radius: calc(1em * cos(var(--a)) / var(--fx)) / calc(1em / var(--fy));
     transform-origin: calc((1 + var(--sgn)) * 50%);
     transform: matrix3d(
       1,
