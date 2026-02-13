@@ -52,8 +52,7 @@ export const arrayCards = [
     repo: 'https://github.com/20essentials/project-1366',
     localImage: '/assets/project-1366.avif',
     id: '009'
-  },
-  
+  }
 ];
 
 export const NUM_OF_PROJECTS = arrayCards.length;

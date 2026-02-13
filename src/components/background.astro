@@ -1,0 +1,129 @@
+<div class='container-bg'></div>
+
+<style>
+  :root {
+    --step: 7%;
+    --offset: 25%;
+    --max-offset: calc(100% - var(--offset));
+    --bg-step: calc(100% / 70);
+    --angle-1: 0;
+    --angle-2: 0;
+    --angle-3: 0;
+    --angle-4: 0;
+  }
+
+  .container-bg {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background-color: black;
+    background-image:
+      repeating-conic-gradient(
+        from var(--angle-1) at var(--offset) var(--offset),
+        white,
+        white var(--step),
+        transparent 0,
+        transparent calc(var(--step) * 2)
+      ),
+      repeating-conic-gradient(
+        from var(--angle-2) at var(--max-offset) var(--max-offset),
+        white,
+        white var(--step),
+        transparent 0,
+        transparent calc(var(--step) * 2)
+      ),
+      repeating-conic-gradient(
+        from var(--angle-3) at var(--max-offset) var(--offset),
+        white,
+        white var(--step),
+        transparent 0,
+        transparent calc(var(--step) * 2)
+      ),
+      repeating-conic-gradient(
+        from var(--angle-4) at var(--offset) var(--max-offset),
+        white,
+        white var(--step),
+        transparent 0,
+        transparent calc(var(--step) * 2)
+      ),
+      repeating-conic-gradient(
+        from var(--angle-1),
+        purple 0,
+        purple var(--bg-step),
+        crimson 0,
+        crimson calc(var(--bg-step) * 2),
+        tomato 0,
+        tomato calc(var(--bg-step) * 3),
+        gold 0,
+        gold calc(var(--bg-step) * 4),
+        yellowgreen 0,
+        yellowgreen calc(var(--bg-step) * 5),
+        mediumaquamarine 0,
+        mediumaquamarine calc(var(--bg-step) * 6),
+        teal 0,
+        teal calc(var(--bg-step) * 7)
+      );
+    background-blend-mode: difference, difference, difference, difference, normal;
+    animation: cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    animation-name: angle1, angle2, angle3, angle4;
+    animation-duration: 17s, 23s, 19s, 27s;
+    animation-delay:
+      -3s,
+      -0.7s,
+      -1.3s;
+    animation-direction: normal, normal, reverse, reverse;
+  }
+
+  @keyframes angle1 {
+    to {
+      --angle-1: 360deg;
+    }
+  }
+  @keyframes angle2 {
+    to {
+      --angle-2: 360deg;
+    }
+  }
+  @keyframes angle3 {
+    to {
+      --angle-3: 360deg;
+    }
+  }
+  @keyframes angle4 {
+    to {
+      --angle-4: 360deg;
+    }
+  }
+</style>
+
+<script>
+  if (CSS && CSS.registerProperty) {
+    window.CSS.registerProperty({
+      name: '--angle-1',
+      syntax: '<angle>',
+      inherits: false,
+      initialValue: '0deg'
+    });
+    window.CSS.registerProperty({
+      name: '--angle-2',
+      syntax: '<angle>',
+      inherits: false,
+      initialValue: '0deg'
+    });
+    window.CSS.registerProperty({
+      name: '--angle-3',
+      syntax: '<angle>',
+      inherits: false,
+      initialValue: '0deg'
+    });
+    window.CSS.registerProperty({
+      name: '--angle-4',
+      syntax: '<angle>',
+      inherits: false,
+      initialValue: '0deg'
+    });
+  }
+</script>
