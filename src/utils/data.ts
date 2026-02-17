@@ -52,7 +52,13 @@ export const arrayCards = [
     repo: 'https://github.com/20essentials/project-1366',
     localImage: '/assets/project-1366.avif',
     id: '009'
-  }
+  },
+  {
+    title: 'TypedRoutes',
+    repo: 'https://github.com/20essentials/some-components-with-shadcn/blob/main/lib/data.ts',
+    localImage: '/assets/typedroutes.avif',
+    id: '010'
+  },
 ];
 
 export const TITLE = `${arrayCards.length} Projects With NEXT.Js - Part 2`;
