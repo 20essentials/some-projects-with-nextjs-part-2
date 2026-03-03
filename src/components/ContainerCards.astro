@@ -7,7 +7,9 @@ import { baseUrl } from '@/utils/functions';
   {
     arrayCards.map(({ id, localImage, repo, title }, i) => (
       <div class='cell' style={`--i: ${i}`}>
-        <a href={repo} class="am-anchor">{title}</a>
+        <a href={repo} class='am-anchor'>
+          {title}
+        </a>
         <article class='card'>
           <figure class='card-figure'>
             <img
@@ -66,10 +68,10 @@ import { baseUrl } from '@/utils/functions';
     padding: 0.4vmax 1.3vmax;
     width: 100%;
 
-     /* 👇 NUEVO */
-  opacity: var(--sel);
-  pointer-events: calc(var(--sel) * 1);
-  transition: opacity 0.4s ease;
+    /* 👇 NUEVO */
+    opacity: var(--sel);
+    pointer-events: calc(var(--sel) * 1);
+    transition: opacity 0.4s ease;
   }
 
   .carousel .cell {

@@ -59,6 +59,12 @@ export const arrayCards = [
     localImage: '/assets/typedroutes.avif',
     id: '010'
   },
+  {
+    title: 'AI Chatbot',
+    repo: 'https://github.com/20essentials/project-1369',
+    localImage: '/assets/project-1369.avif',
+    id: '011'
+  },
 ];
 
 export const TITLE = `${arrayCards.length} Projects With NEXT.Js - Part 2`;
