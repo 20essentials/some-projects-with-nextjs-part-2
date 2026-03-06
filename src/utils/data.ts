@@ -65,6 +65,12 @@ export const arrayCards = [
     localImage: '/assets/project-1369.avif',
     id: '011'
   },
+  {
+    title: 'BroadcastChannel() Practice on NextJS',
+    repo: 'https://github.com/20essentials/project-1370/blob/main/src/components/container-broadcast.tsx',
+    localImage: '/assets/project-1370.avif',
+    id: '012'
+  },
 ];
 
 export const TITLE = `${arrayCards.length} Projects With NEXT.Js - Part 2`;
