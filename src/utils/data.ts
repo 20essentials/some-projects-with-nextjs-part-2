@@ -71,6 +71,12 @@ export const arrayCards = [
     localImage: '/assets/project-1370.avif',
     id: '012'
   },
+  {
+    title: 'Datalist Practice',
+    repo: 'https://github.com/20essentials/project-1371/blob/main/src/components/data-items-container.tsx',
+    localImage: '/assets/project-1371.avif',
+    id: '013'
+  },
 ];
 
 export const TITLE = `${arrayCards.length} Projects With NEXT.Js - Part 2`;
