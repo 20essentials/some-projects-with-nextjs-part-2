@@ -77,6 +77,12 @@ export const arrayCards = [
     localImage: '/assets/project-1371.avif',
     id: '013'
   },
+  {
+    title: 'Magic Portfolio with OnceUI + Next.js',
+    repo: 'https://github.com/20essentials/project-1375',
+    localImage: '/assets/project-1375.avif',
+    id: '014'
+  },
 ];
 
 export const TITLE = `${arrayCards.length} Projects With NEXT.Js - Part 2`;
